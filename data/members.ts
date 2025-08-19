@@ -2,7 +2,7 @@ export const members = [
   {
     name: "eros938",
     role: "admin",
-    description: "Founder of the team, Pwn and Reverse Engineering enthusiast",
+    description: "Founder of the Team, Pwn and Reverse Engineering Enthusiast",
     avatar: "/members/khizar.jpeg",
     social: {
       website: "https://porfolio-sepia-ten.vercel.app/",
@@ -13,7 +13,7 @@ export const members = [
   {
     name: "president-xd",
     role: "admin",
-    description: "Co-founder of the team, Cryptography and Web Security enthusiast",
+    description: "Co-founder of the Team, Cryptography and Web Security Enthusiast",
     avatar: "/members/mohsin.jpeg",
     social: {
       website: "https://albovo.github.io",
@@ -24,7 +24,7 @@ export const members = [
   {
     name: "el-noir",
     role: "member",
-    description: "Web Security and Blockchain enthusiast",
+    description: "Web Security and Blockchain Enthusiast",
     avatar: "/members/mudasir.jpeg",
     social: {
       // website: "https://casey.dev",
@@ -35,7 +35,7 @@ export const members = [
   {
     name: "BL4CK_SP4RR0W",
     role: "member",
-    description: "Digital Forensics enthusiast",
+    description: "Digital Forensics Enthusiast",
     avatar: "/members/fazeel.jpeg",
     social: {
       // website: "https://casey.dev",
@@ -46,7 +46,7 @@ export const members = [
   {
     name: "k4Karlal",
     role: "member",
-    description: "Reverse Engineering and Pwn enthusiast",
+    description: "Reverse Engineering and Pwn Enthusiast",
     avatar: "/members/talha.jpeg",
     social: {
       // website: "https://casey.dev",
