@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -21,30 +22,32 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.theme === 'light') {
-                  document.documentElement.classList.remove('dark')
-                } else if (localStorage.theme === 'system') {
-                  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.classList.add('dark')
-                  } else {
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                try {
+                  if (localStorage.theme === 'light') {
                     document.documentElement.classList.remove('dark')
+                  } else if (localStorage.theme === 'system') {
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                      document.documentElement.classList.add('dark')
+                    } else {
+                      document.documentElement.classList.remove('dark')
+                    }
+                  } else {
+                    // Default to dark theme
+                    document.documentElement.classList.add('dark')
                   }
-                } else {
-                  // Default to dark theme
+                } catch (_) {
+                  // Default to dark theme on error
                   document.documentElement.classList.add('dark')
                 }
-              } catch (_) {
-                // Default to dark theme on error
-                document.documentElement.classList.add('dark')
-              }
-            `,
-          }}
-        />
-        {children}
+              `,
+            }}
+          />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -7,19 +7,19 @@ export default function HomePage() {
       <Navigation />
 
       <main className="flex-1 flex items-center justify-center min-h-[calc(100vh-4rem)]">
-        <div className="text-center">
+        <div className="text-center px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <div className="w-48 h-48 mx-auto mb-6 bg-black-500 rounded-full flex items-center justify-center">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mx-auto mb-6 bg-black-500 rounded-full flex items-center justify-center">
               <Image
-                src="/logo.svg?height=2400&width=240"
+                src="/logo.svg?height=240&width=240"
                 alt="Hashash CTF Team Logo"
                 width={240}
                 height={240}
-                className="rounded-full"
+                className="rounded-full w-full h-full object-cover"
               />
             </div>
-            <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">HasHash</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">HasHash</h1>
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               we pwn the planet :p
             </p>
           </div>
@@ -28,16 +28,16 @@ export default function HomePage() {
 
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500 dark:text-gray-400">© 2025 HasHash CTF Team</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+              <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors">
                 <span className="sr-only">CTFtime</span>
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.484 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+              <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors">
                 <span className="sr-only">GitHub</span>
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                   <path
