@@ -17,27 +17,32 @@ interface WriteupCardProps {
 
 export function WriteupCard({ writeup }: WriteupCardProps) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-      <div className="flex items-start space-x-6">
-        <Image
-          src={writeup.image || "/writeup.svg"}
-          alt={writeup.title}
-          width={200}
-          height={120}
-          className="rounded-lg object-cover"
-        />
+    <div className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+      <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+        <div className="flex-shrink-0 w-full sm:w-auto">
+          <Image
+            src={writeup.image || "/writeup.svg"}
+            alt={writeup.title}
+            width={200}
+            height={120}
+            className="rounded-lg object-cover w-full sm:w-[200px] h-32 sm:h-[120px]"
+          />
+        </div>
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-            <Link href={`/writeups/${writeup.slug}`} className="hover:text-blue-600 dark:hover:text-blue-400">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <Link
+              href={`/writeups/${writeup.slug}`}
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
               {writeup.title}
             </Link>
           </h3>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-            By {writeup.author} 
+            By {writeup.author}
             <br />
             {writeup.date}
           </p>
-          <div className="flex space-x-2 mb-3">
+          <div className="flex flex-wrap gap-2 mb-3">
             {writeup.tags.map((tag) => (
               <span
                 key={tag}
@@ -47,7 +52,7 @@ export function WriteupCard({ writeup }: WriteupCardProps) {
               </span>
             ))}
           </div>
-          <p className="text-gray-700 dark:text-gray-300">{writeup.description}</p>
+          <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">{writeup.description}</p>
         </div>
       </div>
     </div>

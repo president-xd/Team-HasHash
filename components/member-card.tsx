@@ -41,22 +41,24 @@ export function MemberCard({ member }: MemberCardProps) {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
-      <div className="flex items-start space-x-4">
-        <Image
-          src={member.avatar || "/logo.svg"}
-          alt={member.name}
-          width={80}
-          height={80}
-          className="rounded-lg object-cover"
-        />
+    <div className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+      <div className="flex flex-col items-center text-center space-y-4">
+        <div className="flex-shrink-0">
+          <Image
+            src={member.avatar || "/logo.svg"}
+            alt={member.name}
+            width={80}
+            height={80}
+            className="rounded-lg object-cover"
+          />
+        </div>
         <div className="flex-1">
-          <div className="flex items-center space-x-2 mb-1">
+          <div className="flex flex-col items-center space-y-1 mb-1">
             <h3 className="font-semibold text-gray-900 dark:text-white">{member.name}</h3>
             <span className="text-sm text-red-600 dark:text-red-400 font-medium">{member.role}</span>
           </div>
           <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{member.description}</p>
-          <div className="flex space-x-2">
+          <div className="flex justify-center space-x-2">
             {Object.entries(member.social).map(
               ([platform, url]) =>
                 url && (
